@@ -76,7 +76,7 @@ function makeCounter(){
 
 describe('Call Backs', function(){
 	describe('danceALot', ()=>{
-		let dance = makeCount();
+		let dance = makeCounter();
 
 		danceALot(dance, 15);
 		let times = dance();

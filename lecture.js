@@ -36,9 +36,14 @@ d.push(15);
 
 let myArry = [5,7,3,1,6];
 // let's grab the array from 7, 3, 1
-
+let newArry = myArry.slice(1,4)
 let bigArry = [5,6,8,3,4,6,7,1,3,7,4,2,7,5,3,7,5]
 // Lets split up bigArray into a left and right array
+let left = bigArry.slice(0,7);
+let right = bigArry.slice(7);
+
+// console.log(left, right);
+
 // split around it's middle
 
 
@@ -49,10 +54,17 @@ let invitations = ['bob@builders.com', 'jan@do.e', 'billy@crystal.music', 'jane@
 
 // let's remove jane@austin.blog from our array using splice
 
+let janeaustin = invitations.splice(3, 1); // takes out jane@austin.blog
+//janeaustin == the spliced
+
+
+
+
 let genome = ['A','T','C','G','A','T','T','A','C','A','G','T','A','C','A','G','A','T','G'];
 
 // let's replace 'G','A','T','T','A','C','A' with 'C','A','T' using splice
-
+genome.splice(3,7, 'C','A','T')
+// console.log(genome)
 
 // Splice vs Slice
 //  Splice I think of splicing a genome
@@ -69,23 +81,40 @@ let genome = ['A','T','C','G','A','T','T','A','C','A','G','T','A','C','A','G','A
 // Standard loop
 // Loop through from 0 to 10 and console log the square of each number
 
+for (let i = 0; i<=10; i++){
+ console.log(i*i) 
+}
+
 // Odd Loops
 // Different Starting
 // Console logs the square from 100 to 110
 
+for (let i=100; i <=110; i++){
+console.log(i*i)
+}
 // Backwords
 // Console log a countdown from 5 to 1 then a boom;
 
+for (let i=5; i >=0; i--){
+  console.log(i*i)
+
+}
 // Skip Step
 // Console log the multiples of 13 between 1 and 178
-
+for (let i=13; i<=178; i+=13){
+  console.log (i);
+}
 
 // Standard format for looping over an array
 
 // Start at index 0
 // Go while less than the length of array
 // Increase by 1 every time
+let ary = [5,3,7,8,2,5,8,2];
 
+for (let i=0; i<ary.length; i++){
+  ary[i]
+}
 // Goto Practice
 
 
@@ -97,6 +126,7 @@ let genome = ['A','T','C','G','A','T','T','A','C','A','G','T','A','C','A','G','A
 
 let artist = {
   name : "Band of Horses",
+  playThatOneHitSingle(){return'lyrics of that one hit single... You know the one... The one with the music... And the words... Yeah that one...'},
   popularity : 59,
   type : "artist",
   uri : "spotify:artist:0OdUWJ0sBjDrqHygGUXeCF",
@@ -130,17 +160,16 @@ let artist = {
 }
 
 // Grab the name of the artist
-
+artist.name
 // Grab the total number of followers
-
+artist.followers.total
 // Grab the url for the 3rd image
-
+artist.images[2]
 // Add a playThatOneHitSingle method
 // It console logs the lyrics of that one hit single... You know the one... 
 // The one with the music... And the words... Yeah that one...
-
 // Invoke that method
-
+artist.playThatOneHitSingle()
 
 // ## Conditional (Ternary) Operator
 
@@ -148,6 +177,8 @@ let artist = {
 
 // Sometimes if statements are big and bulky and can get in the way.
 // We can use terinary as a shortcut for simple if statements.
+
+
 let party = 'R';
 let str = 'The latest '
 if (party === 'R'){
@@ -157,10 +188,16 @@ if (party === 'R'){
 }
 str += 'candidate has won the election'
 
+
+
+let newStr = `the latest ${(party === "R"? 'Republican': "Democratic")} candidate has won the election.`
 // Let's turn this into a terinary
+
 
 let age = 14
 let drivingAge
+
+let drivingAge = (age>=16?true:false)
 
 if (age >=16){
   drivingAge = true;
