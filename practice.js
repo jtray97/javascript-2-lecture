@@ -104,7 +104,7 @@ function letFateDecide(option1, option2){
 randomNumber = Math.floor(Math.random()*100);
   // if (randomNumber>50){option1()}else{option2()}
 console.log(randomNumber)
-  randomNumber >=50? console.log(`dance chosen was ${option1()}`):console.log(`dance chosen was ${option2()}`);
+randomNumber >=50? option1():option2();
 
 }
 function salsa (){console.log('salsa')}
